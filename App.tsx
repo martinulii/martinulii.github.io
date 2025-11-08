@@ -27,6 +27,12 @@ const App: React.FC = () => {
     let color: string;
     if (mainView === 'trajectoria') {
       color = BRANCH_DATA[activeBranch].color;
+    } else if (mainView === 'habilitats') {
+      // Per habilitats, utilitzem el color tècnic (blau) com a color principal
+      color = BRANCH_DATA.logical.color;
+    } else if (mainView === 'hobbies') {
+      // Per hobbies i futur, utilitzem el color creatiu (lila)
+      color = BRANCH_DATA.artistic.color;
     } else {
       color = '#6b7280'; // gray-500
     }
@@ -101,7 +107,7 @@ const App: React.FC = () => {
           </div>
           <div className={`mt-16 text-center transition-all duration-500 ease-in-out delay-100 ${isLandingExiting ? 'opacity-0 -translate-y-8' : 'opacity-100'}`}>
             <p className="text-lg text-gray-400 mb-4">
-              Fes clic per començar
+              Què t'interessa?
             </p>
             <div className="inline-block animate-subtle-bounce">
               <MainNavigation activeView={mainView} onViewChange={handleInitialViewSelect} />
@@ -146,10 +152,16 @@ const App: React.FC = () => {
            {mainView === 'trajectoria' && (
             <div className="w-full max-w-4xl mx-auto pt-4 mt-4 border-t border-gray-700">
                 <div className="flex justify-between items-center">
-                <h2 className={`w-1/2 text-right text-lg font-bold text-[--branch-color-main] transition-colors duration-300 pr-8 ${!hasFormationEvents && 'invisible'}`}>
+                <h2 
+                  className={`w-1/2 text-right text-lg font-bold transition-colors duration-300 pr-8 ${!hasFormationEvents && 'invisible'}`}
+                  style={{ color: 'var(--branch-color-main)' }}
+                >
                     Formació
                 </h2>
-                <h2 className={`w-1/2 text-left text-lg font-bold text-[--branch-color-main] transition-colors duration-300 pl-8 ${!hasProjectEvents && 'invisible'}`}>
+                <h2 
+                  className={`w-1/2 text-left text-lg font-bold transition-colors duration-300 pl-8 ${!hasProjectEvents && 'invisible'}`}
+                  style={{ color: 'var(--branch-color-main)' }}
+                >
                     Projectes
                 </h2>
                 </div>

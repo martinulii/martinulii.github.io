@@ -47,11 +47,11 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ event, side }) => {
       }`}
     >
       <div className="bg-gray-800/60 backdrop-blur-sm px-6 py-4 rounded-lg shadow-lg">
-        <p className="font-semibold text-[--branch-color-main] transition-colors duration-300">{event.year}</p>
+        <p className="font-semibold transition-colors duration-300" style={{ color: 'var(--branch-color-main)' }}>{event.year}</p>
         
         {event.url ? (
           <a href={event.url} target="_blank" rel="noopener noreferrer" className="group">
-            <h3 className="text-xl font-bold text-white mt-1 transition-colors duration-300 group-hover:text-[--branch-color-main]">
+            <h3 className="text-xl font-bold text-white mt-1 transition-colors duration-300">
               {event.title}
             </h3>
           </a>
@@ -65,7 +65,11 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ event, side }) => {
         </p>
         <div className={`flex flex-wrap gap-2 mt-4 ${side === 'left' ? 'md:justify-end' : 'justify-start'}`}>
           {event.tags.map((tag, i) => (
-            <span key={i} className="bg-gray-700 text-[--branch-color-main] text-xs font-mono px-3 py-1 rounded-full transition-colors duration-300">
+            <span 
+              key={i} 
+              className="bg-gray-700 text-xs font-mono px-3 py-1 rounded-full transition-colors duration-300"
+              style={{ color: 'var(--branch-color-main)' }}
+            >
               {tag}
             </span>
           ))}

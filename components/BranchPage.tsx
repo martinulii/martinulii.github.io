@@ -70,18 +70,24 @@ const BranchPage: React.FC<BranchPageProps> = ({ data }) => {
           <div className="relative max-w-4xl mx-auto" ref={containerRef}>
             <div className="absolute left-1/2 top-0 h-full w-1 bg-gray-700 rounded-full transform -translate-x-1/2"></div>
             <div
-              className="absolute left-1/2 top-0 w-1 bg-[--branch-color-main] rounded-full transform -translate-x-1/2 transition-all duration-300 ease-linear"
-              style={{ height: `${progressHeight}%` }}
+              className="absolute left-1/2 top-0 w-1 rounded-full transform -translate-x-1/2 transition-all duration-300 ease-linear"
+              style={{ 
+                height: `${progressHeight}%`,
+                backgroundColor: 'var(--branch-color-main)'
+              }}
             ></div>
             
             <div className="flex items-start">
               {/* Left Column (Formation) */}
               <div className="w-1/2 pr-8">
-                <div className="space-y-12 flex flex-col items-end">
+                <div className="space-y-20 flex flex-col items-end">
                   {sortedFormation.map((event, index) => (
                     <div className="relative w-full max-w-sm" key={`form-${index}`}>
                        <div className="absolute right-[-34px] top-5 z-20">
-                         <div className="w-4 h-4 rounded-full bg-gray-900 border-4 border-[--branch-color-main] transition-colors duration-300"></div>
+                         <div 
+                           className="w-4 h-4 rounded-full bg-gray-900 border-4 transition-colors duration-300"
+                           style={{ borderColor: 'var(--branch-color-main)' }}
+                         ></div>
                        </div>
                        <TimelineItem event={event} side="left" />
                     </div>
@@ -91,11 +97,14 @@ const BranchPage: React.FC<BranchPageProps> = ({ data }) => {
 
               {/* Right Column (Projects) */}
               <div className="w-1/2 pl-8">
-                <div className="space-y-12 flex flex-col items-start">
+                <div className="space-y-20 flex flex-col items-start">
                   {sortedProjects.map((event, index) => (
                      <div className="relative w-full max-w-sm" key={`proj-${index}`}>
                        <div className="absolute left-[-34px] top-5 z-20">
-                         <div className="w-4 h-4 rounded-full bg-gray-900 border-4 border-[--branch-color-main] transition-colors duration-300"></div>
+                         <div 
+                           className="w-4 h-4 rounded-full bg-gray-900 border-4 transition-colors duration-300"
+                           style={{ borderColor: 'var(--branch-color-main)' }}
+                         ></div>
                        </div>
                        <TimelineItem event={event} side="right" />
                     </div>

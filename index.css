@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+/* Custom styles for branch color hover effects */
+.group:hover h3 {
+  color: var(--branch-color-main) !important;
+}

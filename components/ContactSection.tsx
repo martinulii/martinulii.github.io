@@ -18,11 +18,15 @@ const ContactSection: React.FC<ContactSectionProps> = ({ showTitle = true, class
   return (
     <section aria-labelledby={showTitle ? "contact-title" : undefined} className={className}>
       {showTitle && (
-        <h2 id="contact-title" className="text-3xl font-bold text-center mb-8 text-[--branch-color-main]">
+        <h2 
+          id="contact-title" 
+          className="text-3xl font-bold text-center mb-8"
+          style={{ color: 'var(--branch-color-main)' }}
+        >
           Contacte
         </h2>
       )}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
         {contactLinks.map((link, index) => (
           <a
             key={index}
@@ -31,7 +35,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ showTitle = true, class
             rel="noopener noreferrer"
             className="bg-gray-800/60 backdrop-blur-sm p-4 rounded-lg shadow-lg flex items-center gap-x-4 transition-transform hover:scale-105 hover:bg-gray-700/80"
           >
-            <link.Icon className="w-7 h-7 text-[--branch-color-main]" />
+            <link.Icon className="w-7 h-7" style={{ color: 'var(--branch-color-main)' }} />
             <span className="font-semibold text-white">{link.user}</span>
           </a>
         ))}

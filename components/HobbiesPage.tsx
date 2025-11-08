@@ -22,14 +22,18 @@ const HobbiesPage: React.FC = () => {
         
         {/* Hobbies i Plans de Futur */}
         <section aria-labelledby="future-plans-title">
-          <h2 id="future-plans-title" className="text-3xl font-bold text-center mb-8 text-[--branch-color-main]">
+          <h2 
+            id="future-plans-title" 
+            className="text-3xl font-bold text-center mb-8"
+            style={{ color: 'var(--branch-color-main)' }}
+          >
             Hobbies i Plans de Futur
           </h2>
-          <div className="space-y-8">
+          <div className="space-y-12">
             {futurePlans.map((plan, index) => (
               <div key={index} className="bg-gray-800/60 backdrop-blur-sm p-6 rounded-lg shadow-lg flex items-start gap-x-6">
                 <div className="flex-shrink-0 bg-gray-700 p-3 rounded-full">
-                  <plan.Icon className="w-8 h-8 text-[--branch-color-main]" />
+                  <plan.Icon className="w-8 h-8" style={{ color: 'var(--branch-color-main)' }} />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">{plan.title}</h3>

@@ -24,9 +24,10 @@ const MainNavigation: React.FC<MainNavigationProps> = ({ activeView, onViewChang
             onClick={() => onViewChange(key)}
             className={`flex items-center gap-x-2 px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 ${
               isActive
-                ? 'bg-[--branch-color-main] text-white shadow-md'
+                ? 'text-white shadow-md'
                 : 'text-gray-400 hover:bg-gray-700/50 hover:text-white'
             }`}
+            style={isActive ? { backgroundColor: 'var(--branch-color-main)' } : undefined}
             aria-pressed={isActive}
           >
             <Icon className={`w-5 h-5 transition-colors duration-300 ${isActive ? 'text-white' : 'text-gray-400'}`} />
