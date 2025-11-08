@@ -5,7 +5,7 @@ const contactLinks = [
   { Icon: ICONS.Github, user: '@martinulii', href: 'https://github.com/martinulii' },
   { Icon: ICONS.Instagram, user: '@martinulii_', href: 'https://www.instagram.com/martinulii_' },
   { Icon: ICONS.Youtube, user: '@marsmusic_', href: 'https://www.youtube.com/@marsmusic_' },
-  { Icon: ICONS.Music, user: '@marsmusic (Spotify)', href: 'https://open.spotify.com/artist/1aIkNbt5mYoc6QtNhCOhIn' },
+  { Icon: ICONS.Music, user: '@marsmusic', href: 'https://open.spotify.com/artist/1aIkNbt5mYoc6QtNhCOhIn' },
   { Icon: ICONS.Mail, user: 'marti.losmar@gmail.com', href: 'mailto:marti.losmar@gmail.com' },
 ];
 
