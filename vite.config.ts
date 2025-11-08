@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
+      base: '/', // Change this if your repo name isn't your GitHub username
       server: {
         port: 3000,
         host: '0.0.0.0',
