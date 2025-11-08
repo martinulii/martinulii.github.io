@@ -31,6 +31,17 @@
 </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <script>
+      setTimeout(() => {
+        const root = document.getElementById('root');
+        if (root && !root.hasChildNodes()) {
+          root.style.color = 'white';
+          root.style.textAlign = 'center';
+          root.style.padding = '40px';
+          root.style.fontFamily = 'sans-serif';
+          root.innerHTML = '<h1>Error de Càrrega</h1><p>L\\\'aplicació no s\\\'ha pogut iniciar correctament. Si us plau, refresca la pàgina. Si el problema persisteix, podria ser un error de la plataforma.</p>';
+        }
+      }, 2500);
+    </script>
   </body>
 </html>
